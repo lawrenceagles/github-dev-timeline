@@ -1,4 +1,4 @@
-const getChartData = (repoData) => {
+export const getLanguagesAndStars = (repoData) => {
 	let chartData = repoData.reduce((total, current) => {
 		const { language, stargazers_count } = current;
 		if (!language) return total;
@@ -30,4 +30,22 @@ const getChartData = (repoData) => {
 	return { stack, stars };
 };
 
-export default getChartData;
+export const getStarsAndForks = (repoData) => {
+	let chartData = repoData.reduce(
+		(total, repo, index) => {
+			const { stargazers_count, name, forks } = repo;
+			total.repoStars[index] = { label: name, value: stargazers_count };
+			total.forks[index] = { label: name, value: forks };
+			return total;
+		},
+		{
+			repoStars : {},
+			forks     : {},
+		},
+	);
+
+	const repoStars = Object.values(chartData.repoStars).slice(-5).reverse();
+	const forks = Object.values(chartData.forks).slice(-5).reverse();
+
+	return { repoStars, forks };
+};

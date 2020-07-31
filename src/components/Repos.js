@@ -4,19 +4,20 @@ import { GithubContext } from "../context/context";
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
 
 // Utils
-import getChartData from "../Utils/chartData";
+import { getLanguagesAndStars, getStarsAndForks } from "../Utils/chartData";
 
 const Repos = () => {
 	const { githubRepos } = useContext(GithubContext);
-	let { stack, stars } = getChartData(githubRepos);
+	let { stack, stars } = getLanguagesAndStars(githubRepos);
+	let { repoStars, forks } = getStarsAndForks(githubRepos);
 
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
 				<Pie3D data={stack} />
 				<Column3D data={stars} />
-				<Doughnut2D data={stack} />
-				<Bar3D data={stars} />
+				<Doughnut2D data={repoStars} />
+				<Bar3D data={forks} />
 			</Wrapper>
 		</section>
 	);
