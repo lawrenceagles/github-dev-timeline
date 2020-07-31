@@ -10,9 +10,9 @@ const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
 	const [ githubUser, setGithubUser ] = useState(mockUser);
-	const [ repos, setRepos ] = useState(mockRepos);
-	const [ followers, setFollowers ] = useState(mockFollowers);
-	const githubProps = { githubUser, repos, followers };
+	const [ githubRepos, setGithubRepos ] = useState(mockRepos);
+	const [ githubFollowers, setGithubFollowers ] = useState(mockFollowers);
+	const githubProps = { githubUser, githubRepos, githubFollowers };
 	return <GithubContext.Provider value={{ ...githubProps }}>{children}</GithubContext.Provider>;
 };
 
