@@ -8,12 +8,14 @@ import getChartData from "../Utils/chartData";
 
 const Repos = () => {
 	const { githubRepos } = useContext(GithubContext);
-	let languages = getChartData(githubRepos);
+	let { stack, stars } = getChartData(githubRepos);
 
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
-				<Pie3D data={languages} />
+				<Pie3D data={stack} />
+				<div />
+				<Doughnut2D data={stars} />
 			</Wrapper>
 		</section>
 	);
