@@ -14,6 +14,11 @@ const RenderItem = (props) => {
 	);
 };
 
-RenderItem.propTypes = {};
+RenderItem.propTypes = {
+	icon  : PropTypes.object.isRequired,
+	label : PropTypes.string.isRequired,
+	value : PropTypes.number.isRequired,
+	color : PropTypes.string.isRequired,
+};
 
 export default RenderItem;

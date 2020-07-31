@@ -20,6 +20,7 @@ const UserInfo = () => {
 		{ id: 3, icon: <FiUserPlus className='icon' />, label: "following", value: following, color: "purple" },
 		{ id: 4, icon: <GoGist className='icon' />, label: "gist", value: public_gists, color: "yellow" },
 	];
+	console.log("items", items);
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>{items.map((item) => <RenderItem key={item.id} {...item} />)}</Wrapper>
