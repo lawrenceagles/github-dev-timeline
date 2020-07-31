@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 import { GithubContext } from "../context/context";
 
 //Components
-import RenderItem from "./Renderer/RenderItem";
+import Info from "./Renderers/Info";
 import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
@@ -24,7 +24,7 @@ const UserInfo = () => {
 	];
 	return (
 		<section className='section'>
-			<Wrapper className='section-center'>{items.map((item) => <RenderItem key={item.id} {...item} />)}</Wrapper>
+			<Wrapper className='section-center'>{items.map((item) => <Info key={item.id} {...item} />)}</Wrapper>
 		</section>
 	);
 };

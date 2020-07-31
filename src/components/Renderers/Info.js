@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RenderItem = ({ icon, label, value, color }) => {
+const Info = ({ icon, label, value, color }) => {
 	return (
 		<article className='item'>
 			<span className={color}>{icon}</span>
@@ -13,11 +13,11 @@ const RenderItem = ({ icon, label, value, color }) => {
 	);
 };
 
-RenderItem.propTypes = {
+Info.propTypes = {
 	icon  : PropTypes.object.isRequired,
 	label : PropTypes.string.isRequired,
 	value : PropTypes.number.isRequired,
 	color : PropTypes.string.isRequired,
 };
 
-export default RenderItem;
+export default Info;
