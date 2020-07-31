@@ -1,6 +1,12 @@
+// Styles
+import styled from "styled-components";
+
+// React
 import React, { useContext } from "react";
 import { GithubContext } from "../context/context";
-import styled from "styled-components";
+
+//Components
+import RenderItem from "./Renderer/RenderItem";
 import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
@@ -16,20 +22,8 @@ const UserInfo = () => {
 	];
 	return (
 		<section className='section'>
-			<Wrapper className='section-center'>{items.map((item) => <Item key={item.id} {...item} />)}</Wrapper>
+			<Wrapper className='section-center'>{items.map((item) => <RenderItem key={item.id} {...item} />)}</Wrapper>
 		</section>
-	);
-};
-
-const Item = ({ icon, label, value, color }) => {
-	return (
-		<article className='item'>
-			<span className={color}>{icon}</span>
-			<div>
-				<h3>{value}</h3>
-				<p>{label}</p>
-			</div>
-		</article>
 	);
 };
 
