@@ -7,7 +7,7 @@ const Dashboard = () => {
 		<main>
 			<Navbar />
 			<Search />
-			<info />
+			<Info />
 			<User />
 			<Repos />
 		</main>
