@@ -14,13 +14,14 @@ const UserInfo = () => {
 	const { githubUser: { public_repos, followers, following, public_gists }, repos, githubFollowers } = useContext(
 		GithubContext,
 	);
+
+	// TODO create getGitHubUserDetails Function
 	const items = [
 		{ id: 1, icon: <GoRepo className='icon' />, label: "repos", value: public_repos, color: "pink" },
 		{ id: 2, icon: <FiUsers className='icon' />, label: "followers", value: followers, color: "green" },
 		{ id: 3, icon: <FiUserPlus className='icon' />, label: "following", value: following, color: "purple" },
 		{ id: 4, icon: <GoGist className='icon' />, label: "gist", value: public_gists, color: "yellow" },
 	];
-	console.log("items", items);
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>{items.map((item) => <RenderItem key={item.id} {...item} />)}</Wrapper>

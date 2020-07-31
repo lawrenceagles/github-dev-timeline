@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RenderItem = (props) => {
-	const { icon, label, value, color } = props;
+const RenderItem = ({ icon, label, value, color }) => {
 	return (
 		<article className='item'>
 			<span className={color}>{icon}</span>
