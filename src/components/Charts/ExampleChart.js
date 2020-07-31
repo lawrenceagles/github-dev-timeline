@@ -20,7 +20,7 @@ ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 // STEP 4 - Creating the DOM element to pass the react-fusioncharts component
 const ChartComponent = ({ data }) => {
 	const chartConfigs = {
-		type       : "column2d", // The chart type
+		type       : "bar3d", // The chart type
 		width      : "700", // Width of the chart
 		height     : "400", // Height of the chart
 		dataFormat : "json", // Data type

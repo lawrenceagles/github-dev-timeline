@@ -2,30 +2,18 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
+
+// Utils
+import getChartData from "../Utils/chartData";
+
 const Repos = () => {
-	const { repos } = useContext(GithubContext);
-	const chartData = [
-		{
-			label : "Venezuela",
-			value : "290",
-		},
-		{
-			label : "Saudi",
-			value : "260",
-		},
-		{
-			label : "Canada",
-			value : "180",
-		},
-		{
-			label : "Iran",
-			value : "140",
-		},
-	];
+	const { githubRepos } = useContext(GithubContext);
+	let languages = getChartData(githubRepos);
+
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
-				<ExampleChart data={chartData} />
+				<Pie3D data={languages} />
 			</Wrapper>
 		</section>
 	);
