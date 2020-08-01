@@ -8,9 +8,10 @@ const Login = () => {
 		<Wrapper>
 			<div className='container'>
 				<img src={loginImg} alt='github user' />
-				<h1>github user</h1>
+				<h6>Welcome to</h6>
+				<h1>DevoGraphics</h1>
 				<button className='btn' onClick={loginWithRedirect}>
-					login/sign up
+					login / sign up
 				</button>
 			</div>
 		</Wrapper>
@@ -30,6 +31,9 @@ const Wrapper = styled.section`
 	}
 	h1 {
 		margin-bottom: 1.5rem;
+	}
+	h6 {
+		font-size: 1rem;
 	}
 `;
 export default Login;
