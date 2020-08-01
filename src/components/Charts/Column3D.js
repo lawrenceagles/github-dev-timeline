@@ -11,11 +11,8 @@ import FusionCharts from "fusioncharts";
 // Include the chart type
 import Chart from "fusioncharts/fusioncharts.charts";
 
-// Include the theme as fusion
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-
 // Adding the chart and theme as dependency to the core fusioncharts
-ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
+ReactFC.fcRoot(FusionCharts, Chart);
 
 // STEP 4 - Creating the DOM element to pass the react-fusioncharts component
 const ChartComponent = ({ data }) => {
@@ -27,16 +24,31 @@ const ChartComponent = ({ data }) => {
 		dataSource : {
 			// Chart Configuration
 			chart : {
-				//Set the chart caption
-				caption           : "Most Popular Language",
-				yAxisName         : "Stars",
-				xAxisName         : "Repos",
-				xAxisNameFontSize : "16px",
-				yAxisNameFontSize : "16px",
-				theme             : "fusion",
-				// decimals          : 0,
-				// doughnutRadius    : "45%",
-				// showPercentValues : 0,
+				caption                 : "Most Popular",
+				yAxisName               : "Stars",
+				yAxisNameFontSize       : 16,
+				xAxisName               : "Repos",
+				xAxisNameFontSize       : 16,
+				showCanvasBorder        : 0,
+				showAlternateHGridColor : 0,
+				usePlotGradientColor    : 0,
+				valueFontSize           : 16,
+				placeValuesInside       : 0,
+				divLineColor            : "#102a42",
+				divLineAlpha            : 15,
+				captionFontColor        : "#102a42",
+				captionFontBold         : 0,
+				captionFontSize         : 20,
+				captionFont             : "Roboto",
+				baseFont                : "Open Sans",
+				baseFontSize            : 12,
+				baseFontColor           : "#617d98",
+				smartLineColor          : "#617d98",
+				showShadow              : 0,
+				showPlotBorder          : 0,
+				paletteColors           : "#2caeba, #5D62B5, #FFC533, #F2726F, #8d6e63, #1de9b6, #6E80CA",
+				bgColor                 : "#FFFFFF",
+				showBorder              : 0,
 			},
 			// Chart Data
 			data,

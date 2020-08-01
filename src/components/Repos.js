@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
+import { Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
 
 // Utils
 import { getLanguagesAndStars, getStarsAndForks } from "../Utils/chartData";
@@ -15,8 +15,8 @@ const Repos = () => {
 		<section className='section'>
 			<Wrapper className='section-center'>
 				<Pie3D data={stack} />
-				<Column3D data={stars} />
 				<Doughnut2D data={repoStars} />
+				<Column3D data={stars} />
 				<Bar3D data={forks} />
 			</Wrapper>
 		</section>
