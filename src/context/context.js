@@ -22,10 +22,10 @@ const GithubProvider = ({ children }) => {
 			setError({ show: false, message: "" });
 			setIsLoading(true);
 			const { data } = await axios.get(`${rootUrl}/users/${user}`);
-			const { login, followers_url, repo_url } = data;
+			const { login, followers_url, repos_url } = data;
 			setGithubUser(data);
 			const response = await Promise.allSettled([
-				axios.get(`${repo_url}${login}/repos?per_page=100`),
+				axios.get(`${repos_url}?per_page=100`),
 				axios.get(`${followers_url}?per_page=100`),
 			]);
 			const [ repos, followers ] = response;
