@@ -5,8 +5,15 @@ import { GithubContext } from "../context/context";
 const Search = () => {
 	const [ user, setUser ] = useState("");
 	const { requests, error, searchGithubUser, isLoading } = useContext(GithubContext);
-	const handleSubmit = (e) => {
-		console.log("submit", user);
+	const handleKeyPress = (e) => {
+		if (!user) return;
+		if (e.key === "Enter") {
+			e.preventDefault();
+			e.stopPropagation();
+			searchGithubUser(user);
+		}
+	};
+	const handleSubmit = () => {
 		if (!user) return;
 		searchGithubUser(user);
 	};
@@ -26,6 +33,7 @@ const Search = () => {
 							type='text'
 							placeholder='enter github user  '
 							valut={user}
+							onKeyDown={handleKeyPress}
 							onChange={(e) => setUser(e.target.value)}
 						/>
 						{requests > 0 &&
